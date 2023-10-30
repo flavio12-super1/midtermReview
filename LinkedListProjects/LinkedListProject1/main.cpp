@@ -9,7 +9,7 @@ using namespace std;
 int main()
 {
     LinkedList<int> myList;
-    // myList.append(1);
+    myList.append(1);
     // myList.removeFirst();
     // myList.removeFirst();
     // cout << myList << endl;
@@ -23,7 +23,8 @@ int main()
     // myList.reverse();
     // myList.insert(8, 3);
     // myList.insert(2, 0);
-    // myList.insert(3, 0);
+
+    myList.insert(2, 1);
 
     // myList.insert(0, 0);
     // myList.insert(10, myList.size());
@@ -38,10 +39,10 @@ int main()
     // LinkedList<int> myList3 = myList2;
     // myList3.append(15);
 
-    // myList.addSorted(20);
+    myList.addSorted(0);
 
-    // cout << "arr size: " << myList.size() << endl;
-    // cout << myList << endl;
+    cout << "arr size: " << myList.size() << endl;
+    cout << myList << endl;
     // cout << "arr size 2: " << myList2.size() << endl;
     // cout << myList2 << endl;
     // cout << "arr size 3: " << myList3.size() << endl;
@@ -71,20 +72,20 @@ int main()
     // }
     // cout << "--------------------" << endl;
 
-    {
-        FunkyStack<int> myFunkyStack;
-        int x;
-        for (int i = 0; i < 5; i++)
-        {
-            cin >> x;
-            myFunkyStack.push(x);
-        }
-        // Output the elements from the FunkyStack
-        while (!myFunkyStack.q.isEmpty())
-        {
-            cout << myFunkyStack.pop() << " ";
-        }
-        cout << endl;
-    }
+    // {
+    //     FunkyStack<int> myFunkyStack;
+    //     int x;
+    //     for (int i = 0; i < 5; i++)
+    //     {
+    //         cin >> x;
+    //         myFunkyStack.push(x);
+    //     }
+    //     // Output the elements from the FunkyStack
+    //     while (!myFunkyStack.q.isEmpty())
+    //     {
+    //         cout << myFunkyStack.pop() << " ";
+    //     }
+    //     cout << endl;
+    // }
     return 0;
 }

@@ -183,6 +183,7 @@ public:
             {
                 // Insert at the beginning
                 temp->next = front;
+                front->prev = temp;
                 front = temp;
                 if (arrSize == 0)
                 {
@@ -198,6 +199,7 @@ public:
                     curr = curr->next;
                 }
                 temp->next = curr->next;
+                temp->prev = curr;
                 curr->next = temp;
 
                 if (curr == back)
@@ -274,6 +276,17 @@ std::ostream &operator<<(std::ostream &os, const LinkedList<T> &list)
         curr = curr->next;
     }
     return os;
+    // Link<T> *curr = list.back;
+    // while (curr != nullptr)
+    // {
+    //     os << curr->data;
+    //     if (curr != list.front)
+    //     {
+    //         os << ", ";
+    //     }
+    //     curr = curr->prev;
+    // }
+    // return os;
 }
 
 #endif
