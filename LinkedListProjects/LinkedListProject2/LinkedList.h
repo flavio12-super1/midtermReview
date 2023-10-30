@@ -17,9 +17,10 @@ struct Link
     Link()
     {
         data = 0;
-        prev = nullptr;
         next = nullptr;
+        prev = nullptr;
     }
+
     Link(T value)
     {
         data = value;
@@ -46,9 +47,47 @@ public:
 
     ~LinkedList()
     {
-        Link<T> *temp = front;
-        front = front->next;
-        delete temp;
+        while (front != nullptr)
+        {
+            Link<T> *temp = front;
+            front = front->next;
+            delete temp;
+        }
+        front = back = nullptr;
+    }
+
+    LinkedList(const LinkedList &other)
+    {
+        Link<T> *curr = other.front;
+        while (curr != nullptr)
+        {
+            append(curr->data);
+            curr = curr->next;
+        }
+    }
+
+    LinkedList &operator=(const LinkedList &other)
+    {
+        if (this == &other)
+        {
+            return *this;
+        }
+
+        while (front != nullptr)
+        {
+            Link<T> *temp = front;
+            front = front->next;
+            delete temp;
+        }
+        Link<T> *curr = other.front;
+
+        while (curr != nullptr)
+        {
+            append(curr->data);
+            curr = curr->next;
+        }
+
+        return *this;
     }
 
     void append(T value)
@@ -112,9 +151,40 @@ public:
             }
         }
     }
+    void removeLast()
+    {
+        if (front == nullptr)
+        {
+            throw std::logic_error("nothing to remove");
+        }
+        else if (front == back)
+        {
+            delete back;
+            back = front = nullptr;
+            arrSize--;
+        }
+        else
+        {
+            Link<T> *temp = back;
 
-    void
-    reverse()
+            back = back->prev;
+            back->next = nullptr;
+            delete temp;
+            arrSize--;
+        }
+    }
+
+    T peek()
+    {
+        if (front == nullptr)
+        {
+            throw std::logic_error("nothing to peek at");
+        }
+        return front->data;
+        // return (front) ? front->data : throw std::logic_error("nothing to peek at");
+    }
+
+    void reverse()
     {
         Link<T> *curr = back;
         Link<T> *temp = nullptr;
