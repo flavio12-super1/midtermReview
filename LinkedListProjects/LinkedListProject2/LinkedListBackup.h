@@ -14,12 +14,6 @@ struct Link
     Link *next;
     Link *prev;
 
-    Link()
-    {
-        data = 0;
-        prev = nullptr;
-        next = nullptr;
-    }
     Link(T value)
     {
         data = value;

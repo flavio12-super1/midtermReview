@@ -141,6 +141,43 @@ public:
         deflate();
     }
 
+    void reverse()
+    {
+        int start = 0;
+        int end = count - 1;
+
+        while (start < end)
+        {
+            T temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+
+            start++;
+            end--;
+        }
+    }
+
+    // void insert(T value, int index)
+    // {
+    //     append(value);
+    //     for (int i = count - 1; i > index; i--)
+    //     {
+    //         arr[i] = arr[i - 1];
+    //     }
+    //     arr[index] = value;
+    // }
+    void insert(T value, int index)
+    {
+        append(value);
+        for (int i = count - 1; i > index; i--)
+        {
+            T temp = arr[i];
+            arr[i] = arr[i - 1];
+            arr[i - 1] = temp;
+        }
+        // arr[index] = value;
+    }
+
     T peek()
     {
         if (count == 0)

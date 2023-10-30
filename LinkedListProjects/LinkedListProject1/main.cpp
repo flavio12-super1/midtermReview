@@ -11,7 +11,7 @@ int main()
     LinkedList<int> myList;
     myList.append(1);
     myList.removeFirst();
-    myList.removeFirst();
+    // myList.removeFirst();
     cout << myList << endl;
     // myList.append(3);
     // myList.append(7);
