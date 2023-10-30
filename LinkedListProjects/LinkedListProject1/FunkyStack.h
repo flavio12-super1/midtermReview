@@ -19,6 +19,19 @@ struct FunkyStack
         {
             q.enqueue(q.dequeue());
         }
+
+                // Queue<T> temp;
+        // temp.enqueue(x);
+
+        // while (!q.isEmpty())
+        // {
+        //     temp.enqueue(q.dequeue());
+        // }
+
+        // while (!temp.isEmpty())
+        // {
+        //     q.enqueue(temp.dequeue());
+        // }
     }
     T pop()
     {

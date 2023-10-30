@@ -30,6 +30,10 @@ public:
     {
         return elements.size();
     }
+    bool isEmpty() const
+    {
+        return elements.isEmpty();
+    }
 
     template <class U>
     friend std::ostream &operator<<(std::ostream &os, const Stack<U> &stack);

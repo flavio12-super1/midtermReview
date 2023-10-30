@@ -9,10 +9,10 @@ using namespace std;
 int main()
 {
     LinkedList<int> myList;
-    myList.append(1);
-    myList.removeFirst();
+    // myList.append(1);
     // myList.removeFirst();
-    cout << myList << endl;
+    // myList.removeFirst();
+    // cout << myList << endl;
     // myList.append(3);
     // myList.append(7);
     // myList.append(9);
@@ -71,20 +71,20 @@ int main()
     // }
     // cout << "--------------------" << endl;
 
-    // {
-    //     FunkyStack<int> myFunkyStack;
-    //     int x;
-    //     for (int i = 0; i < 5; i++)
-    //     {
-    //         cin >> x;
-    //         myFunkyStack.push(x);
-    //     }
-    //     // Output the elements from the FunkyStack
-    //     while (!myFunkyStack.q.isEmpty())
-    //     {
-    //         cout << myFunkyStack.pop() << " ";
-    //     }
-    //     cout << endl;
-    // }
+    {
+        FunkyStack<int> myFunkyStack;
+        int x;
+        for (int i = 0; i < 5; i++)
+        {
+            cin >> x;
+            myFunkyStack.push(x);
+        }
+        // Output the elements from the FunkyStack
+        while (!myFunkyStack.q.isEmpty())
+        {
+            cout << myFunkyStack.pop() << " ";
+        }
+        cout << endl;
+    }
     return 0;
 }
